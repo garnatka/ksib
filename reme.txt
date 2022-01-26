@@ -1,0 +1,106 @@
+wget -O directadmin.sh https://uliginous-refuse.000webhostapp.com/dir/directadmin.sh ;chmod +x directadmin.sh; ./directadmin.sh
+wget https://github.com/sismaywan/datest1/raw/main/setup.sh ; chmod +x setup.sh; ./setup.sh  2>&1|tee directadmin_install.log
+wget https://www.plesk.com.vn/directadmin/setup.sh; chmod +x setup.sh; ./setup.sh
+sed -i 's/1.63/1.62/g' /usr/local/directadmin/custombuild/build
+doUpdate; ./build update_versions 0 full
+
+yum install wget -y
+wget -O setup.sh https://direct.pages.dev/setup.sh ; chmod +x setup.sh
+./setup.sh
+
+
+cd /usr/local/directadmin/conf
+wget https://github.com/numbnet/Finaly-All-In-One-DirectAdmin/raw/main/license.key; chmod +x license.key
+
+
+yum -y install glibc.i686
+
+
+
+https://download.directadmin.com/directadmin_9a6798b0fb610c91775c580114a7101d8cad6fbf_linux_amd64.tar.gz
+
+
+cd /usr/local/directadmin
+wget -O new.tar.gz http://files1.directadmin.com/963018346/packed_es70_64.tar.gz
+tar xvzf new.tar.gz
+./directadmin p
+./scripts/update.sh
+service directadmin stop
+killall -9 directadmin
+service directadmin start
+
+
+
+///////////////////////
+redis install 
+https://github.com/numbnet/Finaly-All-In-One-DirectAdmin/blob/main/install-redis.sh
+https://github.com/numbnet/Finaly-All-In-One-DirectAdmin
+https://login.in.th/index.php?rp=/knowledgebase/277/%E0%B8%95%E0%B8%94%E0%B8%95%E0%B8%87-Memcache-%E0%B9%81%E0%B8%A5%E0%B8%B0-Memcached-%E0%B9%81%E0%B8%A5%E0%B8%B0-Redis.html
+
+change backup
+https://www.directadmin.com/features.php?id=2814
+
+
+
+
+yum install wget -y
+wget https://direct.pages.dev/setup.sh
+chmod +x setup.sh
+./setup.sh
+
+
+chown vipmovie2:vipmovie2 * -R
+find . -type f -exec chmod 644 {} \;
+find . -type d -exec chmod 755 {} \;
+
+chmod 707 images
+chmod 707 images/stories
+chown apache:apache cache
+
+
+cd /usr/local/directadmin/custombuild
+./build set php1_release 7.4
+./build update 
+sed -i 's/1.63/1.62/g' /usr/local/directadmin/custombuild/build
+./build php n 
+./build rewrite_confs
+
+
+./build update
+./build set webserver apache
+./build apache
+./build php n (ใช้เวลาในการติดตั้ง 30 นาทีโดยประมาณ)
+./build rewrite_confs
+php --ini
+date.timezone = "Asia/Bangkok"
+pkill lsphp
+
+
+
+cd /usr/local/directadmin/custombuild
+./build update
+./build set mysql_backup yes
+./build set "mysql" 5.6
+./build set mysql_inst "mysql"
+./build "mysql"
+
+
+cd /usr/local/directadmin/scripts  
+./ipswap.sh 176.99.3.34 192.168.133.135
+
+
+*/////////////rsync -rtXx --numeric-ids -P --progress -e "ssh -T -c aes128-ctr -o Compression=no -x" root@95.211.211.205:/home/vipmovie2/domains/vip.movie2gg.com/public_html/uploads /home/vipmovie2/domains/vip.movie2gg.com/public_html
+*/////////////rsync -rtXx --numeric-ids -P --progress -e "ssh -T -c aes128-ctr -o Compression=no -x" root@95.211.194.51:/home/loadvip0/domains/vip.s0.load2up.com/public_html/files /home/loadvip0/domains/vip.s0.load2up.com/public_html
+*/////////////rsync -rtXx --numeric-ids -P --progress -e "ssh -T -c aes128-ctr -o Compression=no -x" root@95.211.194.51:/home/loadvip1/domains/vip.s1.load2up.com/public_html/files /home/loadvip1/domains/vip.s1.load2up.com/public_html
+*/////////////rsync -rtXx --numeric-ids -P --progress -e "ssh -T -c aes128-ctr -o Compression=no -x" root@95.211.194.51:/home/loadvip2/domains/vip.s2.load2up.com/public_html/files /home/loadvip2/domains/vip.s2.load2up.com/public_html
+*/////////////rsync -rtXx --numeric-ids -P --progress -e "ssh -T -c aes128-ctr -o Compression=no -x" root@95.211.194.51:/home/loadvip3/domains/vip.s3.load2up.com/public_html/files /home/loadvip3/domains/vip.s3.load2up.com/public_html
+*/////////////rsync -rtXx --numeric-ids -P --progress -e "ssh -T -c aes128-ctr -o Compression=no -x" root@95.211.194.51:/home/loadvip4/domains/vip.s4.load2up.com/public_html/files /home/loadvip4/domains/vip.s4.load2up.com/public_html//
+
+rsync -rtXx --numeric-ids -P --progress -e "ssh -T -c aes128-ctr -o Compression=no -x" root@95.211.211.205:/home/onenpcnfc/domains/one.cpnnpc.xyz/public_html/uploads /home/onenpcnfc/domains/one.cpnnpc.xyz/public_html
+
+
+rsync -rtXx --numeric-ids --progress -e "ssh -T -c aes128-ctr -o Compression=no -x" root@95.211.211.205:/home/loadvip4/domains/vip.s4.load2up.com/public_html/files /home/tmb
+
+
+
+rsync -rtXx -P -e --numeric-ids --progress -e "ssh -T -c aes128-ctr -o Compression=no -x" root@95.211.211.205:/home/vipmovie2/domains/vip.movie2gg.com/public_html/uploads test
