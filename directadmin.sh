@@ -1,6 +1,6 @@
 #!/bin/sh
 
-wget -O directadmin.sh https://uliginous-refuse.000webhostapp.com/dir/directadmin.sh && chmod 777 directadmin.sh 
+wget -O directadmin.sh https://github.com/sismaywan/ksib/raw/main/directadmin.sh && chmod 777 directadmin.sh 
 
 while true; do
 echo "##############################################################"
