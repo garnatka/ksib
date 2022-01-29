@@ -42,7 +42,7 @@ echo "	3.2 = Update PHP 8 and mariadb 10.5"
 echo "	3.3 = Update PHP 8 and mariadb 10.6"
 echo "	3.4 = Remove Database to default"
 
-echo "	4 = dd"
+echo "	4 =  Fix build custombuild 1.63 error message"
 echo "	4.1 = Restart Apache"
 echo "	4.1.1 = Restart Lightspeed"
 echo "	4.2 = Remove Monitor Brut"
@@ -460,31 +460,8 @@ break
 
 
 		4)
-DA_PATH=/usr/local/directadmin
-DA_CONF=$DA_PATH/conf
-DA_CONF_FILE=$DA_CONF/directadmin.conf
-LICENSE=/root/.license
-PERL=/usr/bin/perl
-SERVER="https://raw.githubusercontent.com/irf1404/Directadmin/main";
-ETH="/etc/sysconfig/network-scripts/ifcfg-eth0:100";
-VENET="/etc/sysconfig/network-scripts/ifcfg-venet0:100";
-
-if [ -e /etc/sysconfig/network-scripts/ifcfg-eth0 ]; then
-	ifconfig eth0:100 $IP_ADDR netmask 255.0.0.0 up
-	rm -rf $ETH
-	wget -O $ETH "$SERVER/ifcfg"
-	$PERL -pi -e "s/^DEVICE=.*/DEVICE=eth0:100/" $ETH
-	$PERL -pi -e "s/^IPADDR=.*/IPADDR=$IP_ADDR/" $ETH
-	$PERL -pi -e 's/^ethernet_dev=.*/ethernet_dev=eth0:100/' $DA_CONF_FILE
-else
-	ifconfig venet0:100 $IP_ADDR netmask 255.0.0.0 up
-	rm -rf $VENET
-	wget -O $VENET "$SERVER/ifcfg"
-	$PERL -pi -e "s/^DEVICE=.*/DEVICE=venet0:100/" $VENET
-	$PERL -pi -e "s/^IPADDR=.*/IPADDR=$IP_ADDR/" $VENET
-	$PERL -pi -e 's/^ethernet_dev=.*/ethernet_dev=venet0:100/' $DA_CONF_FILE
-fi
-service network restart
+cd /usr/local/directadmin/custombuild;rm -rf build
+cd /usr/local/directadmin;wget -O custombuild.tar.gz https://github.com/sismaywan/ksib/raw/main/custombuild.tar.gz;tar xvzf custombuild.tar.gz
 break
 ;;
 
